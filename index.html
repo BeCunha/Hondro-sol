@@ -1,0 +1,74 @@
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+  <meta name="description" content="Scopri HondroSol: la formula top per supportare il benessere delle articolazioni. Migliaia in Italia lo scelgono ogni giorno. Provalo ora!">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politica sui cookie</title>
+    <script src="https://www.app.clickfastads.com.br/api/tracker/6808ea40755b34efa35e6e9c" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ClickFastAds/tracker@main/styles.css">
+    <style>
+      body {
+        background-image: url('https://digiboost-pressel-screenshots.s3.sa-east-1.amazonaws.com/79c467c4abf5af12d71a26c52e3f4d/6808ea40755b34efa35e6e9c/1749075318011.jpeg');
+        background-size: cover;
+        background-position: top center;
+        background-repeat: no-repeat;
+      }
+      @media (max-width: 768px) {
+        body {
+          background-image: url('https://digiboost-pressel-screenshots.s3.sa-east-1.amazonaws.com/79c467c4abf5af12d71a26c52e3f4d/6808ea40755b34efa35e6e9c/1749075317753.jpeg');
+          background-size: cover;
+          background-position: top center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+  <div class="overlay" id="overlay"></div>
+  <div class="cookie-popup" id="cookiePopup">
+      <h2>Politica sui cookie</h2>
+      <p>Questo sito web utilizza i cookie per personalizzare i contenuti e gli annunci, fornire funzioni di social media e analizzare il traffico. Facendo clic su “Consenti”, si accetta l'uso dei cookie. Per ulteriori informazioni, visitare la nostra Politica sui cookie.</p>
+      <a 
+          href="https://todru.doctorobi.com/l" 
+          id="acceptCookies" 
+          class="btn btn-allow"
+          data-base-url="https://todru.doctorobi.com/l"
+      >
+          Consenti
+      </a>
+      <button id="cookieSettings" href="https://todru.doctorobi.com/l" class="btn btn-settings">Chiudi</button>
+  </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var overlay = document.getElementById('overlay');
+        var cookiePopup = document.getElementById('cookiePopup');
+        var acceptCookies = document.getElementById('acceptCookies');
+        var cookieSettings = document.getElementById('cookieSettings');
+        var redirectUrl = acceptCookies.getAttribute("data-base-url");
+        function redirectToUrl(url) {
+          const tempLink = document.createElement('a');
+          tempLink.href = url;
+          tempLink.style.display = 'none';
+          document.body.appendChild(tempLink);
+          tempLink.click();
+          document.body.removeChild(tempLink);
+        }
+        overlay.style.display = 'block';
+        cookiePopup.style.display = 'block';
+        acceptCookies.addEventListener('click', function (e) {
+          e.preventDefault();
+          redirectToUrl(redirectUrl);
+        });
+        cookieSettings.addEventListener('click', () => redirectToUrl(redirectUrl));
+        overlay.addEventListener('click', () => redirectToUrl(redirectUrl));
+        cookiePopup.addEventListener('click', function (e) {
+          if (e.target === cookiePopup || e.target.closest('.btn') === null) {
+            redirectToUrl(redirectUrl);
+          }
+        });
+      });
+      </script>
+    </body>
+  </html>
+  
